@@ -5,7 +5,7 @@ otherwise it will play Freddie Says which is a simpler game made to teach cognit
 The game will cycle through the lights and the flash once for Freddie Says or twice for Simon Says.
 */
 
-const int buttonPins[] = { 3, 4, 5, 6, 7 };  // Pins for the 4 buttons
+const int buttonPins[] = { 3, 4, 5, 6, 7 };  // Pins for the 5 buttons
 const int ledPins[] = { 8, 9, 10, 11, 12 };        // Pins for the corresponding LEDs
 const int buzzer = 2;                        // Pin for the buzzer
 int gameMode = 0;
