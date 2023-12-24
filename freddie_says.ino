@@ -1,5 +1,5 @@
 /*
-There are 2 games in this sketch. There is Freddie Says and Simon Says. If you hold down lights 1 & 2 and then switch the game on it will startup Simon Says
+There are 2 games in this sketch. There is Freddie Says and Simon Says. If you hold down buttons 1 & 2 and then switch the game on it will startup Simon Says
 otherwise it will play Freddie Says which is a simpler game made to teach cognitive amd fine motor skills to little ones.
 
 The game will cycle through the lights and the flash once for Freddie Says or twice for Simon Says.
