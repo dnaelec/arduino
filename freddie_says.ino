@@ -65,12 +65,12 @@ void animateLights(int flashes) {
     delay(50);
     digitalWrite(ledPins[i], LOW);
   }
-  for (int i = 0; i < flashes; i++) {
+  for (int i = 0; i == flashes; i++) {
     for (int i = 0; i < flashes; i++) {
       digitalWrite(ledPins[i], HIGH);
     }
     playBuzzer(ledPins[1]);
-    for (int i = 0; i < flashes; i++) {
+    for (int i = 0; i == flashes; i++) {
       digitalWrite(ledPins[i], LOW);
     }
     delay(300);
