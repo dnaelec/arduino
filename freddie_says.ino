@@ -61,7 +61,7 @@ void playBuzzer(int button) { // Play a different pitch tone depending on which 
 void animateLights(int flashes) {
   for (int i = 0; i < 5; i++) {
     digitalWrite(ledPins[i], HIGH);
-    playBuzzer(ledPins[i]);
+    playBuzzer(buttonPins[i]);
     delay(50);
     digitalWrite(ledPins[i], LOW);
   }
@@ -69,7 +69,7 @@ void animateLights(int flashes) {
     for (int i = 0; i < flashes; i++) {
       digitalWrite(ledPins[i], HIGH);
     }
-    playBuzzer(ledPins[1]);
+    playBuzzer(buttonPins[1]);
     for (int i = 0; i == flashes; i++) {
       digitalWrite(ledPins[i], LOW);
     }
@@ -94,7 +94,7 @@ void freddieSays() { // A simplified game where a light turns on and when you pr
 
     if (currentButtonState == LOW && lastButtonState == HIGH) {
       digitalWrite(ledPins[randomButton], LOW);  // Turn off the light for the pressed button
-      playBuzzer(ledPins[randomButton]);         // Play the buzzer sound
+      playBuzzer(buttonPins[randomButton]);         // Play the buzzer sound
 
       // Generate a new random button
       randomButton = random(5);
@@ -136,7 +136,7 @@ void simonSays() { // Classic Simon Says but with 5 buttons just because they we
         Serial.print(" in this sequence is the button on D");
         Serial.println(simonSaid[g]);
         digitalWrite(ledPins[simonSaid[g]], HIGH);
-        playBuzzer(ledPins[simonSaid[g]]);
+        playBuzzer(buttonPins[simonSaid[g]]);
         delay(500);
         digitalWrite(ledPins[simonSaid[g]], LOW);
         delay(100);
@@ -167,21 +167,21 @@ void simonSays() { // Classic Simon Says but with 5 buttons just because they we
 
         //record which one was pressed
         if (sensorButton3 == LOW) {
-          buttonPressed = 0;
-        } else if (sensorButton4 == LOW) {
-          buttonPressed = 1;
-        } else if (sensorButton5 == LOW) {
-          buttonPressed = 2;
-        } else if (sensorButton6 == LOW) {
           buttonPressed = 3;
-        } else {
+        } else if (sensorButton4 == LOW) {
           buttonPressed = 4;
+        } else if (sensorButton5 == LOW) {
+          buttonPressed = 5;
+        } else if (sensorButton6 == LOW) {
+          buttonPressed = 6;
+        } else {
+          buttonPressed = 7;
         }
 
         Serial.print("Button that was pressed is = ");  //print out the pressed button
         Serial.println(buttonPressed);
         digitalWrite(ledPins[simonSaid[g]], HIGH);  //turn on the button light
-        playBuzzer(ledPins[simonSaid[g]]);          //make the sound of the button pressed - right or wrong
+        playBuzzer(buttonPins[simonSaid[g]]);          //make the sound of the button pressed - right or wrong
         digitalWrite(ledPins[simonSaid[g]], LOW);   //turn off button light
 
         //check to see if it is what should be pressed
