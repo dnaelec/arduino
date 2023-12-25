@@ -65,12 +65,12 @@ void animateLights(int flashes) {
     delay(50);
     digitalWrite(ledPins[i], LOW);
   }
-  for (int i = 0; i == flashes; i++) {
+  for (int i = 0; i < flashes; i++) {
     for (int i = 0; i < flashes; i++) {
       digitalWrite(ledPins[i], HIGH);
     }
     playBuzzer(buttonPins[1]);
-    for (int i = 0; i == flashes; i++) {
+    for (int i = 0; i < flashes; i++) {
       digitalWrite(ledPins[i], LOW);
     }
     delay(300);
@@ -167,15 +167,15 @@ void simonSays() { // Classic Simon Says but with 5 buttons just because they we
 
         //record which one was pressed
         if (sensorButton3 == LOW) {
-          buttonPressed = 3;
+          buttonPressed = 0;
         } else if (sensorButton4 == LOW) {
-          buttonPressed = 4;
+          buttonPressed = 1;
         } else if (sensorButton5 == LOW) {
-          buttonPressed = 5;
+          buttonPressed = 2;
         } else if (sensorButton6 == LOW) {
-          buttonPressed = 6;
+          buttonPressed = 3;
         } else {
-          buttonPressed = 7;
+          buttonPressed = 4;
         }
 
         Serial.print("Button that was pressed is = ");  //print out the pressed button
